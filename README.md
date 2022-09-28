@@ -18,6 +18,7 @@ pip3 install jsonpickle
 ### Clone Magma Repo
 ```
 git clone https://github.com/magma/magma.git
+sudo chown -R $USER magma/.cache/test_certs
 ```
 
 ### 
