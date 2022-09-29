@@ -21,4 +21,19 @@ git clone https://github.com/magma/magma.git
 sudo chown -R $USER magma/.cache/test_certs
 ```
 
-### 
+### Setup Environment
+```
+cd magma/lte/gateway/python/integ_tests/federated_tests
+fab build_all_and_configure
+```
+After this has run, you can check whether your gateways have been bootstrapped using the magmad logs on the AGW and FeG. The command below will try to reach Orc8r from AGW and FeG, and FeG from AGW:
+```
+cd magma/lte/gateway/python/integ_tests/federated_tests
+fab test_connectivity
+```
+Once it has been built, start the magma_trfserver and magma_test VMs:
+```
+cd magma/lte/gateway
+vagrant up magma_test
+vagrant up magma_trfserver
+```
